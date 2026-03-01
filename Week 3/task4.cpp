@@ -1,0 +1,15 @@
+# include <iostream>
+using namespace std;
+main ()
+{
+cout<<"Enter the length of the rectangle:" <<endl;
+float length;
+cin>> length;
+cout<<"Enter the width of the rectangle:" <<endl;
+float width;
+cin>> width;
+float area;
+area = length * width;
+
+cout<<" area is: " << area <<" cm square ";
+} 
