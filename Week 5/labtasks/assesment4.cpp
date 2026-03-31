@@ -6,7 +6,7 @@ int main(){
     while(num >=0)
     {
     cout<<"Enter a number:";
-        cin>> num;;
+        cin>> num;
         sum = sum+num;
     }
     cout <<"Total sum = " <<sum;
