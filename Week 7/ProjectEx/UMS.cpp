@@ -117,7 +117,7 @@ int main()
                      // to find either true or false by using boolean function;
                      bool found = false; // 2nd method;
                      int foundindex = -1;
-                     //
+                     //Sentinel value(0 and more than 0 is a valid position to store data);
 
                      for (int i = 0; i < index; i++)
                      {
