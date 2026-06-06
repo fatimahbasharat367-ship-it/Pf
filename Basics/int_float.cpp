@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int a = 13, b = 5;
+    float c;
+
+    c = (float)a/b; //for getting the result in float(decimal);
+
+    cout << "The division of given numbers in decimal is : " << c;
+
+   return 0;
+}
