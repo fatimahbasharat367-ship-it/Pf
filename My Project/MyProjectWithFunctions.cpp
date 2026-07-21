@@ -1,7 +1,7 @@
 #include <iostream>
 #include <conio.h>
 #include <string>
-#include <cstdlib> // For system()
+#include <cstdlib> // FoR SystEm()
 
 using namespace std;
 
@@ -18,8 +18,9 @@ int ageArray[total_tourist] = {25, 27, 19, 23, 32};
 int personArray[total_tourist] = {3, 5, 2, 1, 4};
 int ratingArray[total_tourist] = {5, 4, 3, 4, 5};
 
-// Function to display the main header
-void displayHeader() {
+// Function to display the main header;
+void displayHeader()
+{
     system("cls"); // to clear the screen after choosing option
     cout << endl;
     cout << "================================================================" << endl;
@@ -28,14 +29,15 @@ void displayHeader() {
     cout << "================================================================" << endl;
 }
 
-// Function to display the main menu
-string displayMainMenu() {
+// Function to display the main menu;
+string displayMainMenu()
+{
     displayHeader();
     cout << "~ User Menu ~" << endl;
     cout << "1-  Admin" << endl;
     cout << "2-  Tourist" << endl;
     cout << "3-  To Exit" << endl;
-    
+
     cout << "Choose option : ";
     string userOption;
     cin >> userOption;
@@ -44,67 +46,84 @@ string displayMainMenu() {
 }
 
 // Admin Operations
-void showAllTourists() {
+void showAllTourists()
+{
     cout << "Name\tage\tSpot" << endl;
-    for (int i = 0; i < index; i = i + 1) {
-        if (nameArray[i] != " ") {
+    for (int i = 0; i < index; i = i + 1)
+    {
+        if (nameArray[i] != " ")
+        {
             cout << nameArray[i] << "\t" << ageArray[i] << "\t" << spotArray[i] << endl;
         }
     }
 }
 
-void viewAllBookings() {
+void viewAllBookings()
+{
     cout << "Name\tage\tSpot\tPrice\tPersons\tDuration" << endl;
-    for (int i = 0; i < index; i = i + 1) {
+    for (int i = 0; i < index; i = i + 1)
+    {
         cout << nameArray[i] << "\t" << ageArray[i] << "\t" << spotArray[i] << "\t" << priceArray[i] << "\t" << personArray[i] << "\t" << durationArray[i] << endl;
     }
 }
 
-void viewAvailablePackages() {
+void viewAvailablePackages()
+{
     cout << "Spot\tPrice\tDuration" << endl;
-    for (int j = 0; j < index; j++) {
+    for (int j = 0; j < index; j++)
+    {
         cout << spotArray[j] << "\t" << priceArray[j] << "\t" << durationArray[j] << endl;
     }
 }
 
-void searchTourist() {
+void searchTourist()
+{
     cout << "Enter the name you want to search: ";
     string name;
     cin >> name;
     bool found = false;
     int foundindex = -1;
-    
-    for (int i = 0; i < index; i = i + 1) {
-        if (nameArray[i] == name) {
+
+    for (int i = 0; i < index; i = i + 1)
+    {
+        if (nameArray[i] == name)
+        {
             foundindex = i;
             found = true;
         }
     }
-    
-    if (found == false) {
+
+    if (found == false)
+    {
         cout << "Record of this name not founded: " << name << endl;
-    } else {
+    }
+    else
+    {
         cout << "Name\tage\tSpot\tPrice\tDuration" << endl;
         cout << nameArray[foundindex] << "\t" << ageArray[foundindex] << "\t" << spotArray[foundindex] << "\t" << priceArray[foundindex] << "\t" << durationArray[foundindex] << endl;
     }
 }
 
-void updateTouristRecord() {
+void updateTouristRecord()
+{
     cout << "Enter the name you want to update record of: ";
     string name;
     cin >> name;
 
     bool found = false;
     int foundindex = -1;
-    for (int i = 0; i < index; i = i + 1) {
-        if (nameArray[i] == name) {
+    for (int i = 0; i < index; i = i + 1)
+    {
+        if (nameArray[i] == name)
+        {
             foundindex = i;
             found = true;
             break;
         }
     }
-    
-    if (found == true) {
+
+    if (found == true)
+    {
         cout << "================= Old Record ================" << endl;
         cout << "Name\tage\tSpot\tPrice\tDuration" << endl;
         cout << nameArray[foundindex] << "\t" << ageArray[foundindex] << "\t" << spotArray[foundindex] << "\t" << priceArray[foundindex] << "\t" << durationArray[foundindex] << endl;
@@ -136,27 +155,33 @@ void updateTouristRecord() {
         priceArray[foundindex] = price;
         durationArray[foundindex] = duration;
         cout << "\nRecord updated successfully!" << endl;
-    } else {
+    }
+    else
+    {
         cout << "Record not found" << endl;
     }
 }
 
-void deleteTouristRecord() {
+void deleteTouristRecord()
+{
     cout << "Enter the name you want to delete record of: ";
     string name;
     cin >> name;
 
     bool found = false;
     int foundindex = -1;
-    for (int i = 0; i < index; i = i + 1) {
-        if (nameArray[i] == name) {
+    for (int i = 0; i < index; i = i + 1)
+    {
+        if (nameArray[i] == name)
+        {
             foundindex = i;
             found = true;
             break;
         }
     }
-    
-    if (found == true) {
+
+    if (found == true)
+    {
         nameArray[foundindex] = " ";
         spotArray[foundindex] = " ";
         ageArray[foundindex] = 0;
@@ -164,15 +189,21 @@ void deleteTouristRecord() {
         durationArray[foundindex] = "";
         personArray[foundindex] = 0;
         cout << "Record of " << name << " Deleted " << endl;
-    } else {
+    }
+    else
+    {
         cout << "Record not found " << endl;
     }
 }
 
-void sortByPopularity() {
-    for (int i = 0; i < index - 1; i++) {
-        for (int j = 0; j < index - i - 1; j++) {
-            if (ratingArray[j] < ratingArray[j + 1]) {
+void sortByPopularity()
+{
+    for (int i = 0; i < index - 1; i++)
+    {
+        for (int j = 0; j < index - i - 1; j++)
+        {
+            if (ratingArray[j] < ratingArray[j + 1])
+            {
                 int tempRating = ratingArray[j];
                 ratingArray[j] = ratingArray[j + 1];
                 ratingArray[j + 1] = tempRating;
@@ -207,15 +238,19 @@ void sortByPopularity() {
     cout << "The Records sorted by Highest Rating!" << endl;
     cout << "Name\tRating\tSpot\tPrice" << endl;
     cout << "------------------------------------" << endl;
-    for (int i = 0; i < index; i++) {
-        if (nameArray[i] != " " && nameArray[i] != "") {
+    for (int i = 0; i < index; i++)
+    {
+        if (nameArray[i] != " " && nameArray[i] != "")
+        {
             cout << nameArray[i] << "\t" << ratingArray[i] << "\t" << spotArray[i] << "\t" << priceArray[i] << endl;
         }
     }
 }
 
-void adminMenu() {
-    while (true) {
+void adminMenu()
+{
+    while (true)
+    {
         system("cls");
         cout << "--------Admin Menu-----------" << endl;
         cout << " 1- Show all the tourists list. " << endl;
@@ -230,24 +265,41 @@ void adminMenu() {
         cout << " Choose an option : " << endl;
         string adminOption;
         cin >> adminOption;
-        
-        if (adminOption == "1") {
+
+        if (adminOption == "1")
+        {
             showAllTourists();
-        } else if (adminOption == "2") {
+        }
+        else if (adminOption == "2")
+        {
             viewAllBookings();
-        } else if (adminOption == "3") {
+        }
+        else if (adminOption == "3")
+        {
             viewAvailablePackages();
-        } else if (adminOption == "4") {
+        }
+        else if (adminOption == "4")
+        {
             searchTourist();
-        } else if (adminOption == "5") {
+        }
+        else if (adminOption == "5")
+        {
             updateTouristRecord();
-        } else if (adminOption == "6") {
+        }
+        else if (adminOption == "6")
+        {
             deleteTouristRecord();
-        } else if (adminOption == "7") {
+        }
+        else if (adminOption == "7")
+        {
             sortByPopularity();
-        } else if (adminOption == "8") {
-            break; 
-        } else {
+        }
+        else if (adminOption == "8")
+        {
+            break;
+        }
+        else
+        {
             cout << "Wrong Option selected" << endl;
         }
         cout << "Press any key to continue...";
@@ -255,9 +307,11 @@ void adminMenu() {
     }
 }
 
-void adminLogin() {
+void adminLogin()
+{
     int countattempt = 0;
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++)
+    {
         system("cls");
         cout << "-- Admin Menu --" << endl;
         cout << " Login Attempt : " << i + 1 << endl;
@@ -269,14 +323,17 @@ void adminLogin() {
         cout << "Enter Password: ";
         string password;
         cin >> password;
-        
-        if (username == "Fama" && password == "2578") {
+
+        if (username == "Fama" && password == "2578")
+        {
             cout << "Logged in Successfully" << endl;
             cout << "Press any key to continue... ";
             getch();
             adminMenu();
             break;
-        } else {
+        }
+        else
+        {
             cout << "Username or Password is invalid" << endl;
         }
         cout << "Press any key to continue... ";
@@ -285,7 +342,8 @@ void adminLogin() {
 }
 
 // Tourist Portal Functions
-void touristPortal() {
+void touristPortal()
+{
     system("cls");
     cout << "Welcome to Tourist Portal" << endl;
     cout << "---Tourist Menu---" << endl;
@@ -303,21 +361,26 @@ void touristPortal() {
     bool found = false;
 
     cout << "\n ------Available Spots-----" << endl;
-    for (int i = 0; i < 5; i++) {
-        cout << i << " . " << spotArray[i] << " (Rs. " << priceArray[i] << ") [Rating : " << ratingArray[i] << "/5 ]" << endl;
-        if (ratingArray[i] == 5) {
+    for (int i = 0; i < 5; i++)
+    {
+        cout << i + 1 << " . " << spotArray[i] << " (Rs. " << priceArray[i] << ") [Rating : " << ratingArray[i] << "/5 ]" << endl;
+        if (ratingArray[i] == 5)
+        {
             cout << " ---->> TOP RATED <<---- " << endl;
         }
         cout << endl;
     }
 
-    while (true) {
+    while (true)
+    {
         cout << "Enter the spot you want to travel from the list." << endl;
         cout << "---> ";
         cin >> sspot;
-        
-        for (int i = 0; i < 5; i++) {
-            if (sspot == spotArray[i]) {
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (sspot == spotArray[i])
+            {
                 found = true;
                 cout << "How many individuals are travelling ? ";
                 cin >> person;
@@ -332,17 +395,21 @@ void touristPortal() {
                 break;
             }
         }
-        if (found) {
+        if (found)
+        {
             cout << " Congratulations your booking is successful." << endl;
             cout << "You Booked for " << sspot << "!" << endl;
             break;
-        } else {
+        }
+        else
+        {
             cout << " We are not offering tour for " << sspot << "." << endl;
             cout << "Try Again." << endl;
         }
     }
 
-    if (found) {
+    if (found)
+    {
         system("cls");
         cout << "************************************************************" << endl;
         cout << "                     THE ADVENTURE COMPASS                  " << endl;
@@ -351,8 +418,10 @@ void touristPortal() {
         cout << " Name : " << name << endl;
         cout << " Destination : " << sspot << endl;
 
-        for (int j = 0; j < 5; j++) {
-            if (sspot == spotArray[j]) {
+        for (int j = 0; j < 5; j++)
+        {
+            if (sspot == spotArray[j])
+            {
                 cout << "Activity : " << activityArray[j] << endl;
             }
         }
@@ -367,23 +436,29 @@ void touristPortal() {
     getch();
 }
 
-// Main Function
-int main() {
+// Main Function wala hisa ha joh ky function call kr rhaaa ha ;
+int main()
+{
     system("color 0B");
 
-    while (true) {
+    while (true)
+    {
         string userOption = displayMainMenu();
 
-        if (userOption == "1") {
+        if (userOption == "1")
+        {
             adminLogin();
-        } 
-        else if (userOption == "2") {
+        }
+        else if (userOption == "2")
+        {
             touristPortal();
-        } 
-        else if (userOption == "3") {
+        }
+        else if (userOption == "3")
+        {
             break;
-        } 
-        else {
+        }
+        else
+        {
             cout << "You entered wrong option " << endl;
             cout << "Press any key to proceed further. ";
             getch();

@@ -1,0 +1,8 @@
+Ayesha 25 Chitral 15000 3 4days 5
+Zainab 32 Kashmir 17000 4 7days 5
+Sawera 12 Sawat 12000 5 3 4
+Alishba 23 Sawat 10000 1 3days 4
+Dua 18 Sawat 20000 2 3days 4
+Fama 12 Kartarpur 24000 2 2days 3
+Aliya 23 Sawat 20000 2 3days 4
+Eman 13 Hunza 40000 2 5days 4

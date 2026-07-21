@@ -72,7 +72,7 @@ int main()
                while (true)
                {
                   system("cls"); // for clear;
-                                 //  menu for the admin to select;
+                  //  menu for the admin to select;
                   cout << "--------Admin Menu-----------" << endl;
                   cout << " 1- Show all the tourists list. " << endl;
                   cout << " 2- View all Bookings." << endl;
@@ -341,7 +341,7 @@ int main()
          cout << "\n ------Available Spots-----" << endl;
          for (int i = 0; i < 5; i++)
          {
-            cout << i << " . " << spotArray[i] << " (Rs. " << priceArray[i] << ") [Rating : " << ratingArray[i] << "/5 ]" << endl;
+            cout << i + 1 << " . " << spotArray[i] << " (Rs. " << priceArray[i] << ") [Rating : " << ratingArray[i] << "/5 ]" << endl;
             if (ratingArray[i] == 5)
             {
                cout << " ---->> TOP RATED <<---- " << endl;
