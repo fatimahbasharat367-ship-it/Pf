@@ -1,4 +1,4 @@
-6
+7
 Ayesha
 Chitral
 Hunting
@@ -47,3 +47,11 @@ None
 27
 1
 4
+Basharat
+Kartarpur
+None
+60000
+2_days
+50
+5
+3
