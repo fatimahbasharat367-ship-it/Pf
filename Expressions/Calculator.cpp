@@ -24,7 +24,7 @@ int main() {
              cout << " The multiplication of two numbers is : " << ans;   
     }else if ( sign == '/' ){
          ans = num1 / num2 ;
-             cout << " The subtract of two numbers is : " << ans;   
+             cout << " The division of two numbers is : " << ans;   
     }else{
         cout << " We don't perform calculation upon it.";
     }
